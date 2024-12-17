@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  firebase-deploy:
+    build: .
+    container_name: firebase-deployer
+    environment:
+      - FIREBASE_TOKEN=TU_TOKEN_GENERADO
+    volumes:
+      - .:/app
+    command: firebase deploy --token $FIREBASE_TOKEN
